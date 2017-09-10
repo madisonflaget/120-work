@@ -34,4 +34,4 @@ I kind of want to move the files in my old porfolio directory to a different pla
 We didn't have any issues this week. The only thing I've seen in issues section so far has been the discussion questions, which I posted about.
 
 Also here is my screen shot of my mardown preview.
-![image of my editor](markdown_screenshot.jpg)
+![image of my editor](markdown_screenshot.JPG)
