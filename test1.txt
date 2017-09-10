@@ -1,0 +1,15 @@
+Name: Madison
+Date: 9/8/17
+
+This is my first text document for one of Dr. Musick's Media Arts courses.
+
+Hi :)
+
+I added a new line to this file in my text editor!!!!
+
+first commit test
+second test
+
+moved to new folder named 120-work
+
+Hello! :)
