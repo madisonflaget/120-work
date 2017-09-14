@@ -31,7 +31,7 @@ I had some issues controlling Git via Command Line and PowerShell. I know the re
 I kind of want to move the files in my old porfolio directory to a different place on my computer but I remember that I didn't do it because it would break a bunch of links. I would like to know how to do it in case I **need** to do it later on.
 
 ### Question 5
-We didn't have any issues this week. The only thing I've seen in issues section so far has been the discussion questions, which I posted about.
+I responded to a few of the tech issues. I got there a little late so they were pretty much already solved, but still keeping an eye on it.
 
 Also here is my screen shot of my mardown preview.
 ![image of my editor](markdown_screenshot.JPG)
