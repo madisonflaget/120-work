@@ -10,6 +10,6 @@ It was tempting to copy and paste the code from the site, but it was very helpfu
 
 3) I had a issue that puzzled me for a bit. When I was writing the draw function in my sketch file, I somehow changed the setup function to a draw function. I know this because it was displaying just fine before I started the draw function. I'm sure that I just hit a wrong hotkey somehere. I didn't need to post about it because I ended up finding my error myself.
 
-4) I saw the moving shaping shape at the top of the ["p5.js site"](https://p5js.org/) and really want to learn to make stuff like that. It intrigued me. I'm sure that's too advanced right now but I am looking forward to it
+4) I saw the moving shaping shape at the top of the [p5.js site](https://p5js.org/) and really want to learn to make stuff like that. It intrigued me. I'm sure that's too advanced right now but I am looking forward to it
 
-5) Benji0130 was the last issue posted so I tried to answer ["his question"](https://github.com/Montana-Media-Arts/120_CreativeCoding_Fall2017/issues/35). He was super vague and therefore hard to help. I did think I made a good simile to explain pushing to Github.
+5) Benji0130 was the last issue posted so I tried to answer [his question](https://github.com/Montana-Media-Arts/120_CreativeCoding_Fall2017/issues/35). He was super vague and therefore hard to help. I did think I made a good simile to explain pushing to Github.
