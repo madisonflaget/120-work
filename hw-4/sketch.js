@@ -38,25 +38,34 @@ function draw() {
         // ** HEAD **********************************
         push();
 
-        // head code goes here
-        // make skull first
+        // **SKULL**
+        fill('white')
+        noStroke()
+        ellipse(0,-90,150)
+        // **END SKULL**
 
 
             // **MOUTH**
             push();
-            // mouth code goes here
+                rectMode(CENTER)
+                fill('white')
+                rect(0,-30,60,60)
             pop();
             // **END MOUTH**
 
             // **TEETH**
             push();
-            // teeth code goes here
+                stroke('black')
+                strokeWeight(4)
+                line(0,-20,0,0)
+                line(-15,-20,-15,0)
+                line(15,-20,15,0)
             pop();
             // **END TEETH**
 
             // **EYES**
             push();
-            // eye code goes here
+            
             pop();
             // **END EYES**
 
