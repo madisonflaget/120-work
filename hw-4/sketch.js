@@ -15,12 +15,34 @@ function draw() {
         translate( 300, 300 );
 
 
-        // ** BODY **********************************
+        // ** RIBS **********************************
         push();
-        // body code goes here
+            rectMode(CENTER);
+            fill('white');
+            noStroke();
+            rect(0,40,150,15);
+            rect(0,80,150,15);
+            rect(0,120,150,15);
+            rect(0,80,15,90);
         pop();
-        // **END BODY**
+        // **END RIBS**
 
+        // ** JOINTS **********************************
+        push();
+            fill('white');
+            noStroke();
+            ellipse(0,15,20);
+            ellipse(0,140,20);
+        pop();
+        // **END JOINTS**
+
+        // ** PELVIS **********************************
+        push();
+            noStroke();
+            fill('white');
+            triangle(-75,160,75,160,0,200);
+        pop();
+        // **END PELVIS**
 
         // ** ARMS **********************************
         push();
@@ -39,39 +61,43 @@ function draw() {
         push();
 
         // **SKULL**
-        fill('white')
-        noStroke()
-        ellipse(0,-90,150)
+        fill('white');
+        noStroke();
+        ellipse(0,-90,150);
         // **END SKULL**
 
 
             // **MOUTH**
             push();
-                rectMode(CENTER)
-                fill('white')
-                rect(0,-30,60,60)
+                rectMode(CENTER);
+                fill('white');
+                rect(0,-30,60,60);
             pop();
             // **END MOUTH**
 
             // **TEETH**
             push();
-                stroke('black')
-                strokeWeight(4)
-                line(0,-20,0,0)
-                line(-15,-20,-15,0)
-                line(15,-20,15,0)
+                stroke('black');
+                strokeWeight(4);
+                line(0,-20,0,0);
+                line(-15,-20,-15,0);
+                line(15,-20,15,0);
             pop();
             // **END TEETH**
 
             // **EYES**
             push();
-            
+            fill('black');
+            ellipse(-30,-80,50,70);
+            ellipse(30,-80,50,70);
             pop();
             // **END EYES**
 
             // **NOSE**
             push();
-            // nose code goes here
+            fill('black');
+            noStroke();
+            triangle(-10,-30,10,-30,0,-50);
             pop();
             // **END NOSE**
 
