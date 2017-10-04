@@ -40,7 +40,7 @@ function draw() {
         push();
             noStroke();
             fill('white');
-            triangle(-75,160,75,160,0,200);
+            triangle(-75,155,75,155,0,200);
         pop();
         // **END PELVIS**
 
@@ -107,7 +107,13 @@ function draw() {
 
         // ** HAT **********************************
         push();
-        // hat code goes here
+            translate(-50,0);
+            rotate(radians(30));
+            rectMode(CENTER);
+            noStroke();
+            fill('purple')
+            rect(0,-170,150,30)
+            rect(0,-220,90,70)
         pop();
         // **END HAT**
 
