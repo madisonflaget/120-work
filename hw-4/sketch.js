@@ -1,59 +1,80 @@
 function setup() {
     // create a canvas to draw my portrait on
-    createCanvas( 600, 900 );
+    createCanvas( 600, 600 );
 }
 
 function draw() {
     // set the background color
-    background( 'rgb(78, 249, 135)' );
+    background( 'grey' );
 
     // *****************************************************
     // create a sandbox for the entire character
     push();
 
-    // move the entire grid for this character to the center of the canvas
-    translate( 300, 450 );
+        // move the entire grid for this character to the center of the canvas
+        translate( 300, 300 );
 
 
-    // ** BODY **********************************
-    push();
-    // body code goes here
-
-    pop();
-    // **END BODY**
-
-
-    // ** ARMS **********************************
-    push();
-    // arms code goes here
-
-    pop();
-    // **END ARMS**
+        // ** BODY **********************************
+        push();
+        // body code goes here
+        pop();
+        // **END BODY**
 
 
-    // ** HEAD **********************************
-    push();
+        // ** ARMS **********************************
+        push();
+        // arms code goes here
+        pop();
+        // **END ARMS**
 
-    // head code goes here
-    // make skull first
+        // ** LEGS **********************************
+        push();
+        // legs code goes here
+        pop();
+        // **END LEGS**
 
 
-    // **MOUTH**
-    push();
-    // mouth code goes here
+        // ** HEAD **********************************
+        push();
 
-    pop();
-    // **END MOUTH**
+        // head code goes here
+        // make skull first
 
-    // **EYES**
-    push();
-    // eye code goes here
 
-    pop();
-    // **END EYES**
+            // **MOUTH**
+            push();
+            // mouth code goes here
+            pop();
+            // **END MOUTH**
 
-    pop();
-    // **END HEAD**
+            // **TEETH**
+            push();
+            // teeth code goes here
+            pop();
+            // **END TEETH**
+
+            // **EYES**
+            push();
+            // eye code goes here
+            pop();
+            // **END EYES**
+
+            // **NOSE**
+            push();
+            // nose code goes here
+            pop();
+            // **END NOSE**
+
+
+        pop();
+        // **END HEAD**
+
+        // ** HAT **********************************
+        push();
+        // hat code goes here
+        pop();
+        // **END HAT**
 
 
     // ** END CHARACTER SANDBOX *******************
