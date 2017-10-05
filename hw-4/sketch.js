@@ -5,7 +5,7 @@ function setup() {
 
 function draw() {
     // set the background color
-    background( 'grey' );
+    background( 100 );
 
     // *****************************************************
     // create a sandbox for the entire character
@@ -43,18 +43,6 @@ function draw() {
             triangle(-75,155,75,155,0,200);
         pop();
         // **END PELVIS**
-
-        // ** ARMS **********************************
-        push();
-        // arms code goes here
-        pop();
-        // **END ARMS**
-
-        // ** LEGS **********************************
-        push();
-        // legs code goes here
-        pop();
-        // **END LEGS**
 
 
         // ** HEAD **********************************
@@ -107,16 +95,40 @@ function draw() {
 
         // ** HAT **********************************
         push();
-            translate(-50,0);
+            translate(-70,30);
             rotate(radians(30));
             rectMode(CENTER);
             noStroke();
             fill('purple')
+            scale(1.25)
             rect(0,-170,150,30)
             rect(0,-220,90,70)
         pop();
         // **END HAT**
 
+
+        // ** ARMS **********************************
+        push();
+            rectMode(CENTER);
+            rotate(radians(45));
+            fill('white');
+            noStroke();
+            rect(100,-90,20,130);
+            rect(-100,90,130,20);
+        pop();
+        // **END ARMS**
+
+        // ** LEGS **********************************
+        push();
+            rectMode(CENTER);
+            translate(0,150);
+            rotate(radians(45));
+            fill('white');
+            noStroke();
+            rect(130,0,130,20);
+            rect(0,130,20,130);
+        pop();
+        // **END LEGS**
 
     // ** END CHARACTER SANDBOX *******************
     pop();
