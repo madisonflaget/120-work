@@ -20,10 +20,10 @@ function draw() {
             rectMode(CENTER);
             fill('white');
             noStroke();
-            rect(0,40,150,15);
-            rect(0,80,150,15);
-            rect(0,120,150,15);
-            rect(0,80,15,90);
+            rect(0,40,150,15,10);
+            rect(0,80,150,15,10);
+            rect(0,120,150,15,10);
+            rect(0,80,15,90,10);
         pop();
         // **END RIBS**
 
@@ -59,7 +59,7 @@ function draw() {
             push();
                 rectMode(CENTER);
                 fill('white');
-                rect(0,-30,60,60);
+                rect(0,-30,60,60,10);
             pop();
             // **END MOUTH**
 
@@ -113,8 +113,8 @@ function draw() {
             rotate(radians(45));
             fill('white');
             noStroke();
-            rect(100,-90,20,130);
-            rect(-100,90,130,20);
+            rect(100,-90,20,130,10);
+            rect(-100,90,130,20,10);
         pop();
         // **END ARMS**
 
@@ -125,8 +125,8 @@ function draw() {
             rotate(radians(45));
             fill('white');
             noStroke();
-            rect(130,0,130,20);
-            rect(0,130,20,130);
+            rect(130,0,130,20,10);
+            rect(0,130,20,130,10);
         pop();
         // **END LEGS**
 
