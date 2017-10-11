@@ -10,8 +10,8 @@ var brow_pos_x = face_size * 0.2;
 var brow_pos_y = face_size * 0.1;
 var brow_width = eye_size * 1.2;
 var brow_thick = eye_size * 0.2;
-var face_pos_y = face_size * 0.15;
-var mouth_width = face_size * 0.75;
+var face_pos_y = face_size * 0.35;
+var mouth_width = face_size * 0.50;
 var mouth_height = face_size * 0.50;
 
 function setup() {
@@ -37,16 +37,32 @@ function draw() {
         ellipse(-eye_pos_x, eye_pos_y, eye_size);
         ellipse( eye_pos_x, eye_pos_y, eye_size);
 
-        //*** EYE BROWS ***
+        //*** LEFT EYE BROW ***
         push();
             rectMode(CENTER);
-            rotate(radians(45));
+            translate(0, face_size*-0.25);
+            rotate(radians(20));
             // translate(brow_width*0.25, brow_width*-0.25);
             noStroke();
             fill('black');
             rect(-brow_pos_x, brow_pos_y, brow_width, brow_thick);
         pop();
 
+        //*** RIGHT EYE BROW ***
+        push();
+            rectMode(CENTER);
+            translate(0, face_size*-0.25);
+            rotate(radians(-20));
+            // translate(brow_width*0.25, brow_width*-0.25);
+            noStroke();
+            fill('black');
+            rect(brow_pos_x, brow_pos_y, brow_width, brow_thick);
+        pop();
+
+        //*** MOUTH ***
+        noStroke();
+        fill('black');
+        arc( 0, face_pos_y, mouth_width, mouth_height, PI, TWO_PI );
 
     pop();
 
