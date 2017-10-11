@@ -27,7 +27,15 @@ function setup() {
 function draw() {
     background('gray');
 
+    // FIXME: am I defining these right?
+    // define local variables, the ones we want to update each frame
+    // var fr = frameRate();
+    // var target_fr = mousey * .01;
+    // fr( target_fr );
+
+    //---------------------------------------------------
     //*** ANGRY FACE ***
+    // --------------------------------------------------
     push();
         translate(650,300);
 
@@ -71,7 +79,10 @@ function draw() {
 
     pop();
 
+
+    // -----------------------------------------------------------
     //*** FRUSTRATION METER ***
+    //------------------------------------------------------------
     push();
         // set 0,0 for meter to bottom left corner
         // translate(0,600);
@@ -95,8 +106,27 @@ function draw() {
 
     pop();
 
-    meter_y = meter_y - 5;
 
-    //TO DO: fix size variation of face
+    // -----------------------------------------------------------
+    //*** TEXT ELEMENTS ***
+    //------------------------------------------------------------
+
+    push();
+
+        // TODO: fix frameRate adjustment
+        var fr = frameRate();
+
+        textSize(32);
+        fill('black');
+        text("Frustration Meter", 50, 50);
+        text("Anger from Stupidity =", 400, 50);
+        text("rate of frustraiton increase: " + fr, 400, 100);
+
+    pop();
+
+    // set meter to fill over time
+    meter_y = meter_y - 2;
+
+    //TODO: fix size variation of face
     // var face_size = mousey + 100;
 }
