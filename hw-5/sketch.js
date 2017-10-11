@@ -1,11 +1,15 @@
 // initial variable. Define face size.
-var face_size = 100;
+var face_size = 400;
 
 // all other variables are determined in
 // relation to the smileySize variable.
-var eyePos_x = face_size * 0.2;
-var eyePos_y = face_size * -0.15;
-var eyeSize = face_size * 0.2;
+var eye_pos_x = face_size * 0.2;
+var eye_pos_y = face_size * -0.07;
+var eye_size = face_size * 0.2;
+var brow_pos_x = face_size * 0.2;
+var brow_pos_y = face_size * 0.1;
+var brow_width = eye_size * 1.2;
+var brow_thick = eye_size * 0.2;
 var face_pos_y = face_size * 0.15;
 var mouth_width = face_size * 0.75;
 var mouth_height = face_size * 0.50;
@@ -20,6 +24,29 @@ function draw() {
 
     //*** ANGRY FACE ***
     push();
+        translate(650,300);
+
+        //*** OUTLINE OF HEAD ***
+        noStroke();
+        fill('rgb(255,100,0)');
+        ellipse( 0, 0, face_size );
+
+        //*** EYES ***
+        noStroke();
+        fill('black');
+        ellipse(-eye_pos_x, eye_pos_y, eye_size);
+        ellipse( eye_pos_x, eye_pos_y, eye_size);
+
+        //*** EYE BROWS ***
+        push();
+            rectMode(CENTER);
+            rotate(radians(45));
+            // translate(brow_width*0.25, brow_width*-0.25);
+            noStroke();
+            fill('black');
+            rect(-brow_pos_x, brow_pos_y, brow_width, brow_thick);
+        pop();
+
 
     pop();
 
