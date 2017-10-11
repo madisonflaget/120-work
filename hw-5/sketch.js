@@ -1,18 +1,23 @@
 // initial variable. Define face size.
-var face_size = 400;
+var face_size = 100;
 
 // all other variables are determined in
-// relation to the smileySize variable.
+// relation to the face_size variable.
 var eye_pos_x = face_size * 0.2;
 var eye_pos_y = face_size * -0.07;
 var eye_size = face_size * 0.2;
+
 var brow_pos_x = face_size * 0.2;
 var brow_pos_y = face_size * 0.1;
 var brow_width = eye_size * 1.2;
 var brow_thick = eye_size * 0.2;
+
 var face_pos_y = face_size * 0.35;
 var mouth_width = face_size * 0.50;
+
 var mouth_height = face_size * 0.50;
+
+var meter_y = 400;
 
 function setup() {
     // create a canvas to draw my portrait on
@@ -68,6 +73,30 @@ function draw() {
 
     //*** FRUSTRATION METER ***
     push();
+        // set 0,0 for meter to bottom left corner
+        // translate(0,600);
+        // rotate(radians(180));
+
+        // make meter outline
+        rectMode(CORNERS);
+        stroke(10);
+        noFill();
+        rect(150, 100, 200, 500);
+
+        //make ball @ bottom of meter
+        fill('red');
+        ellipse(175, 520, 80);
+
+        // meter fill level
+        rectMode(CORNERS);
+        noStroke();
+        fill("red");
+        rect(150, meter_y, 200, 500);
 
     pop();
+
+    meter_y = meter_y - 5;
+
+    //TO DO: fix size variation of face
+    // var face_size = mousey + 100;
 }
