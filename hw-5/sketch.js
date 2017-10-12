@@ -117,7 +117,7 @@ function draw() {
         text("Frustration Meter", 50, 50);
         text("Anger due to the Stupidity of Humanity", 400, 575);
         textSize(40);
-        text("Life of A Customer Service Worker", 350, 50);
+        text("Life of a Customer Service Worker", 350, 50);
         // removed for now. Not sure if I like how it looks
         // text("rate of frustraiton increase: " + fr, 400, 100);
 

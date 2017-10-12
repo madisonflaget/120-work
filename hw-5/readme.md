@@ -1,6 +1,6 @@
 Madison Flaget, 51
 
-[Hwk 5 Sketch]()
+[Hwk 5 Sketch](https://madisonflaget.github.io/120-work/hw-5/)
 
 1) I liked the work this week. Variables are frustrating to learn but the reward is definitely worth it. Variables open up all sorts od new possibilities.
 
@@ -10,4 +10,4 @@ Madison Flaget, 51
 
 4) It came up a bit during office hours, but I would like to learn about some common ways that you can BREAK code. I would like to avoid common mistakes.
 
-5) By the time I go to it, everyone's issue had been solved. But I did read and respond to Jon's post "Avoiding Confusion". 
+5) By the time I go to it, everyone's issue had been solved. But I did read and respond to Jon's post "Avoiding Confusion".
