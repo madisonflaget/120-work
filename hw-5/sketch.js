@@ -14,10 +14,11 @@ var brow_thick = eye_size * 0.2;
 
 var face_pos_y = face_size * 0.35;
 var mouth_width = face_size * 0.50;
-
 var mouth_height = face_size * 0.50;
 
-var meter_y = 400;
+// introduce variables that chance in relation to
+var meter_y = 475;
+
 
 function setup() {
     // create a canvas to draw my portrait on
@@ -25,23 +26,20 @@ function setup() {
 }
 
 function draw() {
-    background('gray');
-
-    // FIXME: am I defining these right?
-    // define local variables, the ones we want to update each frame
-    // var fr = frameRate();
-    // var target_fr = mousey * .01;
-    // fr( target_fr );
+    background(200);
+    var green_value = 200 -mouseY/3;
 
     //---------------------------------------------------
     //*** ANGRY FACE ***
     // --------------------------------------------------
     push();
         translate(650,300);
+        // set up to scale size in relation to mouseY and canvas height
+        scale( mouseY/height * 4);
 
         //*** OUTLINE OF HEAD ***
         noStroke();
-        fill('rgb(255,100,0)');
+        fill(color(255, green_value, 0));
         ellipse( 0, 0, face_size );
 
         //*** EYES ***
@@ -84,9 +82,6 @@ function draw() {
     //*** FRUSTRATION METER ***
     //------------------------------------------------------------
     push();
-        // set 0,0 for meter to bottom left corner
-        // translate(0,600);
-        // rotate(radians(180));
 
         // make meter outline
         rectMode(CORNERS);
@@ -95,13 +90,13 @@ function draw() {
         rect(150, 100, 200, 500);
 
         //make ball @ bottom of meter
-        fill('red');
+        fill(color(255, green_value, 0));
         ellipse(175, 520, 80);
 
         // meter fill level
         rectMode(CORNERS);
         noStroke();
-        fill("red");
+        fill(color(255, green_value, 0));
         rect(150, meter_y, 200, 500);
 
     pop();
@@ -114,19 +109,22 @@ function draw() {
     push();
 
         // TODO: fix frameRate adjustment
+        frameRate(mouseY/20 + 1);
         var fr = frameRate();
 
         textSize(32);
         fill('black');
         text("Frustration Meter", 50, 50);
-        text("Anger from Stupidity =", 400, 50);
-        text("rate of frustraiton increase: " + fr, 400, 100);
+        text("Anger due to the Stupidity of Humanity", 400, 575);
+        textSize(40);
+        text("Life of A Customer Service Worker", 350, 50);
+        // removed for now. Not sure if I like how it looks
+        // text("rate of frustraiton increase: " + fr, 400, 100);
 
     pop();
 
     // set meter to fill over time
-    meter_y = meter_y - 2;
+    meter_y = meter_y - 1;
 
-    //TODO: fix size variation of face
-    // var face_size = mousey + 100;
+
 }
