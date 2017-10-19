@@ -7,12 +7,13 @@ box.height = 50;
 box.pos_x = width / 2;
 box.pos_y = height*0.5;
 box.col_g = 255;
-box.col_b = 255;
+
+
 
 function setup() {
     createCanvas( windowWidth - 10, windowHeight - 10);
-    background("gray");
-    frameRate(30);
+    background(230);
+    // frameRate(30);
 }
 
 function draw() {
@@ -31,19 +32,34 @@ function draw() {
     //     applyMatrix(cos_a, sin_a, -sin_a, cos_a, 0, 0);
     // //*** END
 
-    // bind eraser to smaller box within canvas
-    var eraser_x = map( mouseX, 0, width, width*0.25, width*0.75);
-    var eraser_y = map( mouseY, 0, height, height*0.25, height*0.75);
-    // modulo overrides randomization to keep eraser_size between 0-49;
-    var eraser_size = (random(0,100)) % 50;
+    var eraser = {}
 
-    // draw my box and call it's qualities. Also draw eraser.
-    noStroke();
+    eraser.ran_x = random(0, width)
+    eraser.ran_y = random(0, height)
+    // bind eraser to smaller box within canvas
+    eraser.x = map( eraser.ran_x, 0, width, width*0.25, width*0.75);
+    eraser.y = map( eraser.ran_y, 0, height, height*0.25, height*0.75);
+    // modulo overrides randomization to keep eraser.size between 0-49;
+    eraser.size = (random(0,100)) % 50;
+    eraser.col_b = round(random(255));
+
+    //scrapped because I decide that I didn't like it
+    // // draw edge of windsheild
     // rectMode(CENTER);
-    fill(0, box.col_g, box.col_b );
+    // noFill();
+    // stroke(50);
+    // rect( width/2, height/2, width*0.5, height*0.5);
+
+    // draw my box and call it's qualities. This draws the art over time.
+    noStroke();
+
+    fill(0, box.col_g, 0, 100);
     rect( box.pos_x, box.pos_y, box.width, box.height);
-    fill("white");
-    ellipse(eraser_x, eraser_y, eraser_size);
+
+    // draw my eraser which is randomly draw over time
+    fill( 0, 0, eraser.col_b, 150 );
+    ellipse(eraser.x, eraser.y, eraser.size);
+
 
 
 
@@ -58,5 +74,5 @@ function draw() {
     //the green and blue values will be randomly generated and contrained via floor or round
     // box.col_ran =
     box.col_g = floor(random(256));
-    box.col_b = round(random(255));
+
 }
