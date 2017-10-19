@@ -4,7 +4,7 @@ var box = {};
 // declare box size, position, and color qualities and random quality for color
 box.width = 50;
 box.height = 50;
-box.pos_x = width/2;
+box.pos_x = width / 2;
 box.pos_y = height*0.5;
 box.col_g = 255;
 box.col_b = 255;
@@ -30,11 +30,16 @@ function draw() {
     //     applyMatrix(cos_a, sin_a, -sin_a, cos_a, 0, 0);
     // //*** END
 
+    var eraser_x = map( mouseX, 0, width, width*0.25, width*0.75);
+    var eraser_y = map( mouseY, 0, height, height*0.25, height*0.75);
+
     // draw my box and call it's qualities
     noStroke();
     // rectMode(CENTER);
     fill(0, box.col_g, box.col_b );
     rect( box.pos_x, box.pos_y, box.width, box.height);
+    fill("white");
+    ellipse(eraser_x, eraser_y, 100);
 
 
 
