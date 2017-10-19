@@ -1,12 +1,13 @@
-
+// declare object box
+var box = {};
 
 // declare variable for rectangle size
-var rect_width = 50;
-var rect_height = 50;
+box.width = 50;
+box.height = 50;
 
 // declare rectangle positon variable.
-var rect_pos_x = width/2;
-var rect_pos_y = height/2;
+box.pos_x = width/2;
+box.pos_y = height/2;
 
 function setup() {
     createCanvas( windowWidth, windowHeight);
@@ -19,13 +20,13 @@ function draw() {
     noStroke();
     rectMode(CENTER);
     fill('blue');
-    rect( rect_pos_x, rect_pos_y, rect_width, rect_height);
+    rect( box.pos_x, box.pos_y, box.width, box.height);
 
     // the position of the rect will be randomly generated within the values, then rounded
-    rect_pos_x = random( 0, width);
-    rect_pos_y = random( 0, height);
+    box.pos_x = random( 0, width);
+    box.pos_y = random( 0, height);
 
     // the size of the rect will be randomly generated within the values, then rounded
-    rect_width = round(random( 10, 100));
-    rect_height = round(random( 10, 100));
+    box.width = round(random( 10, 100));
+    box.height = round(random( 10, 100));
 }
