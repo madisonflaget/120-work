@@ -13,13 +13,18 @@ function setup() {
 
 function draw() {
 
-    // declare that the position of the rect will be randomly generated within the contraint then rounded
+    // declare that the position of the rect will be randomly generated within the values, then rounded
     var rect_pos_x = round(random( 0, rect_pos_x_con));
     var rect_pos_y = round(random( 0, rect_pos_y_con));
+
+    // declare the the size of the rect will be randomly generated within the values, then rounded
+    var rect_width = round(random( 10, 100));
+    var rect_height = round(random( 10, 100));
 
     // draw rect
     noStroke();
     rectMode(CENTER);
-    rect();
+    fill('blue');
+    rect( rect_pos_x, rect_pos_y, rect_width, rect_height);
 
 }
