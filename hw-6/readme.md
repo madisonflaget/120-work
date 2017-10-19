@@ -1,6 +1,6 @@
 Madison Flaget, 51
 
-[Algorithmic Sketch - Rainy Drive in the Forest](https://madisonflaget.github.io/120-work/hw-6/
+[Algorithmic Sketch - Rainy Drive in the Forest](https://madisonflaget.github.io/120-work/hw-6/)
 
 1) Summarize the work you did this homework cycle. Paying particular attention to the individual choices you made.
 
