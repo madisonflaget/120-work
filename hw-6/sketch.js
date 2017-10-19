@@ -12,6 +12,7 @@ box.col_b = 255;
 function setup() {
     createCanvas( windowWidth - 10, windowHeight - 10);
     background("gray");
+    frameRate(30);
 }
 
 function draw() {
@@ -30,28 +31,31 @@ function draw() {
     //     applyMatrix(cos_a, sin_a, -sin_a, cos_a, 0, 0);
     // //*** END
 
+    // bind eraser to smaller box within canvas
     var eraser_x = map( mouseX, 0, width, width*0.25, width*0.75);
     var eraser_y = map( mouseY, 0, height, height*0.25, height*0.75);
+    // modulo overrides randomization to keep eraser_size between 0-49;
+    var eraser_size = (random(0,100)) % 50;
 
-    // draw my box and call it's qualities
+    // draw my box and call it's qualities. Also draw eraser.
     noStroke();
     // rectMode(CENTER);
     fill(0, box.col_g, box.col_b );
     rect( box.pos_x, box.pos_y, box.width, box.height);
     fill("white");
-    ellipse(eraser_x, eraser_y, 100);
+    ellipse(eraser_x, eraser_y, eraser_size);
 
 
 
-    // the position of the rect will be randomly generated within the values, then rounded
-    box.pos_x = random( 0, width - 100);
-    box.pos_y = random( 0, height - 100);
+    // the position of the rect will be randomly generated within the values, then rounded  to the nearest integer
+    box.pos_x = round(random( 0, width - 100));
+    box.pos_y = round(random( 0, height - 100));
 
     // the size of the rect will be randomly generated within the values, then rounded
     box.width = round(random( 10, 100));
     box.height = round(random( 10, 100));
 
-    //the green and blue values will be randomly generated and contrained
+    //the green and blue values will be randomly generated and contrained via floor or round
     // box.col_ran =
     box.col_g = floor(random(256));
     box.col_b = round(random(255));
