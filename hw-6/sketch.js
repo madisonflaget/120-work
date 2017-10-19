@@ -8,8 +8,6 @@ box.pos_x = width / 2;
 box.pos_y = height*0.5;
 box.col_g = 255;
 
-
-
 function setup() {
     createCanvas( windowWidth - 10, windowHeight - 10);
     background(230);
@@ -52,16 +50,12 @@ function draw() {
 
     // draw my box and call it's qualities. This draws the art over time.
     noStroke();
-
     fill(0, box.col_g, 0, 100);
     rect( box.pos_x, box.pos_y, box.width, box.height);
 
     // draw my eraser which is randomly draw over time
     fill( 0, 0, eraser.col_b, 150 );
     ellipse(eraser.x, eraser.y, eraser.size);
-
-
-
 
     // the position of the rect will be randomly generated within the values, then rounded  to the nearest integer
     box.pos_x = round(random( 0, width - 100));
