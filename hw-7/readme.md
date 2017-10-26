@@ -1,11 +1,12 @@
 Your Name, Your Section Number
 
-[Live Sketch Link](Your Live Link)
+[Live Sketch Link]https://madisonflaget.github.io/120-work/hw-7/(Your Live Link)
 
 
 # HW 7 | Describe then Alter the Bouncing Ball
 
 ## Description of What the Original Code is Doing
+
 
 <!--
 --This is a Comment Block--
@@ -18,6 +19,7 @@ How can you make the ball change direction?
 
 -->
 
+My Description
 
 ## How did you alter the sketch?
 
