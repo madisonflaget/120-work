@@ -1,13 +1,26 @@
-Madison Flaget, 51
+Your Name, Your Section Number
 
-[Live Sketch](https://madisonflaget.github.io/120-work/hw-3/
+[Live Sketch Link](Your Live Link)
 
-1) Summarize the work you did this homework cycle. Paying particular attention to the individual choices you made.
 
-2) What steps did you take to complete the assignment?
+# HW 7 | Describe then Alter the Bouncing Ball
 
-3) Did you have any problems or issues? How did you solve these? Did you post about these to the class repo issue tracker? Did you receive any useful feedback from your classmates?
+## Description of What the Original Code is Doing
 
-4) Is there anything in particular you learned that you would like to discuss further?
+<!--
+--This is a Comment Block--
 
-5) What issues did you help your fellow classmates out with this past homework cycle?
+Please describe what the original code is doing.
+
+Why is it working the way it is?
+What does each line do?
+How can you make the ball change direction?
+
+-->
+
+
+## How did you alter the sketch?
+
+<!--
+Please describe how and why you changed the sketch?
+-->
