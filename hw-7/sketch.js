@@ -53,6 +53,6 @@ function draw() {
 function mousePressed() {
     ball.scale_x = map(mouseX, 0, width, 0.5, 10);
     ball.scale_y = map(mouseY, 0, height, 0.5, 10);
-    ball.color = random(255), random(255), random(255);
+    // ball.color = random(255), random(255), random(255);
     background(random(255), random(255), random(255));
 }
