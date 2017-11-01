@@ -4,6 +4,7 @@
 
 var move = 0;
 function setup(){
+    // subtracted 5 so that the scroll bars don't appear on the edges of the screen
     createCanvas ( windowWidth-5, windowHeight-5);
 }
 
@@ -41,5 +42,6 @@ function draw(){
             }
     }
 
+    // moves dots in increments of 1px per frame
     move += 1;
 }
