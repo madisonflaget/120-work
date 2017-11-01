@@ -1,3 +1,7 @@
+// Code inspired by example on Coding Train: 4.2 by Daniel Shiffman
+// https://youtu.be/1c1_TMdf8b8?t=3m42s
+// https://youtu.be/1c1_TMdf8b8?t=7m14s
+
 var move = 0;
 function setup(){
     createCanvas ( windowWidth, windowHeight );
