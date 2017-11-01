@@ -4,13 +4,26 @@
 
 var move = 0;
 function setup(){
-    createCanvas ( windowWidth, windowHeight );
+    createCanvas ( windowWidth-5, windowHeight-5);
 }
 
 function draw(){
     background(0);
-    strokeWeight(4);
+    strokeWeight(1);
+    stroke(100);
+
+    //** Background grid
+    for ( grid_x=0; grid_x < width; grid_x+=50 ){
+        for ( grid_y=25; grid_y < height; grid_y+=50 ){
+            // for function for vertical lines
+            line ( grid_x, grid_y, grid_x, height );
+            // for function for horizontal lines
+            line ( grid_x, grid_y, width, grid_y );
+        }
+    }
+
     stroke(255);
+    strokeWeight(4);
 
     //** MAGENTA dots that move right
     for (var y=50; y <= height; y += 100) {
