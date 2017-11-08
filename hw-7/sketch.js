@@ -8,7 +8,8 @@ ball.delta_x = 1;
 ball.delta_y = 1;
 ball.scale_x = 1;
 ball.scale_y = 1;
-ball.color = 'rgba( 255, 255, 255, 0.5)';
+ball.mainColor = 'rgba( 100, 200, 100, 0.3)';
+ball.color = ball.mainColor;
 
 function setup() {
     createCanvas(windowWidth, 400);
@@ -28,7 +29,7 @@ function draw() {
         ball.color = 'rgba( 255, 0, 0, 1 )';
 
     } else {
-        ball.color = 'rgba( 100, 200, 100, 0.3 )';
+        ball.color = ball.mainColor;
     }
 //** END **************************************
 
@@ -38,12 +39,13 @@ function draw() {
         ball.color = 'rgba( 255, 0, 0, 1 )';
 
     } else {
-        ball.color = 'rgba( 100, 200, 100, 0.3 )';
+        // ball.color = 'rgba( 100, 200, 100, 0.3 )';
     }
 //** END ****************************************
 
     // if (mouseIsPressed){
-    //     ball.color = 'rgba( random(255), random(255), random(255), 0.5)';
+        // ball.color = 'rgba( random(255), random(255), random(255), 0.5)';
+        // ball.color = color( random(255), random(255), random(255) );
     // }
 
     fill(ball.color);
@@ -53,6 +55,6 @@ function draw() {
 function mousePressed() {
     ball.scale_x = map(mouseX, 0, width, 0.5, 10);
     ball.scale_y = map(mouseY, 0, height, 0.5, 10);
-    // ball.color = random(255), random(255), random(255);
-    background(random(255), random(255), random(255));
+    ball.mainColor = color( random(255), random(255), random(255), 100 );
+    // background(random(255), random(255), random(255));
 }
