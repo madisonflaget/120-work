@@ -1,6 +1,6 @@
 Madison Flaget, 51
-
-[Live Sketch](https://madisonflaget.github.io/120-work/hw-3/
+//work in progress. Musick offered me an extension
+[Live Sketch](https://madisonflaget.github.io/120-work/hw-10/
 
 1) Summarize the work you did this homework cycle. Paying particular attention to the individual choices you made.
 
