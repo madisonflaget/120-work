@@ -12,7 +12,6 @@ function upperGums(dir) {
     fill(229,152,194)
     rect( 0, dir, width, 50 )
 }
-
 function upperTeeth(x, dir){
     fill(254,222,138)
     rect( x, 50 + dir, teethSpace, teethSpace)
@@ -24,7 +23,6 @@ function lowerGums(dir) {
     fill(229,152,194);
     rect( 0, height + dir, width, 50 )
 }
-
 function lowerTeeth(x, dir) {
     fill(254,222,138);
     rect( teethSpace+ x, (height-teethSpace) + dir, teethSpace, teethSpace)
@@ -43,35 +41,19 @@ function draw () {
 
     //*** DRAW UPPER JAW
     upperGums(yDown);
-    upperTeeth(teeth_pos_array[0], yDown);
-    upperTeeth(teeth_pos_array[1], yDown);
-    upperTeeth(teeth_pos_array[2], yDown);
-    upperTeeth(teeth_pos_array[3], yDown);
-    upperTeeth(teeth_pos_array[4], yDown);
-    //***********************************
+    // draw upper teeth by looping an array
+    for( let idx=0; idx < teeth_pos_array.length; idx++) {
+        upperTeeth(teeth_pos_array[idx], yDown);
+    }
+    //*********************************************************
 
     //*** DRAW LOWER JAW
     lowerGums(yUp);
-    lowerTeeth(teeth_pos_array[0], yUp);
-    lowerTeeth(teeth_pos_array[1], yUp);
-    lowerTeeth(teeth_pos_array[2], yUp);
-    lowerTeeth(teeth_pos_array[3], yUp);
-    lowerTeeth(teeth_pos_array[4], yUp);
-    //***************************************
-
-
-    // I WAS ORIGINALLLY GOING TO USE JUST THE ARRAY TO DRAW THE TEETH, BUT THEN REALIZED THAT
-    // I WAS MISSING THE REQUIRED FUNCTIONS
-    // for( let idx=0; idx < teeth_pos_array.length; idx++) {
-    //     // GUMS
-    //     fill('pink')
-    //     rect( 0, yDown, width, 50 )
-    //
-    //     // UPPER TEETH
-    //     fill('gray')
-    //     rect( teeth_pos_array[idx], 50 + yDown, 50, 50)
-    //     // teeth();
-    // }
+    // draw upper teeth by looping an array
+    for( let idx=0; idx < teeth_pos_array.length; idx++) {
+        lowerTeeth(teeth_pos_array[idx], yUp);
+    }
+    //******************************************************
 
     // triggers and contrains movement
     yDown = (yDown + 1) % (height/3);
