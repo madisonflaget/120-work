@@ -1,6 +1,6 @@
-Madison Flaget, 51
-work in progress. Musick offered me an extension
-[Live Sketch](https://madisonflaget.github.io/120-work/hw-10/
+Madison Flaget, 51 <br>
+
+[Live Sketch](https://madisonflaget.github.io/120-work/hw-10/ <br>
 
 1) Summarize the work you did this homework cycle. Paying particular attention to the individual choices you made.
     We used what we learned ove the past two weeks about arrays(what they are, how to make one, looping through them) and functions (defining, inputing parameters, making code more readable by reusing code via a function, and function returns) to make something. This was a harder assignment because I had to apply 2 weeks worth of material in one assignment.
