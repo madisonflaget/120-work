@@ -2,24 +2,30 @@ let drop;
 
 function setup() {
     createCanvas(windowWidth,windowHeight);
-    drop = new Drop(width/2, height/2, 50, 'teal')
+    drop = new Drop(width/2, 100, 50, 'teal')
 }
 
 function draw() {
     background(0);
 
+    // draw pip from which the drops seem to appear
+    fill(200);
+    rect((width/2)-50, 0, 100, 40);
+    fill(150);
+    rect((width/2)-50, 40, 100, 20);
+
     drop.display();
     drop.drift();
 }
 
-//***DEFINE BUBBLES CLASS
+//*** DEFINE DROP CLASS ***********************************
 class Drop {
     constructor(tempX, tempY, tempSize, tempColor) {
         this.posX = tempX;
         this.posY = tempY;
         this.size = tempSize;
-        this.deltaX = random(-2, 2);
-        this.deltaY = random(-2, 2);
+        this.deltaX = random(-1, 1);
+        this.deltaY = random(-1, 1);
         this.color = tempColor;
     }
 
@@ -36,3 +42,4 @@ class Drop {
         this.posY = this.posY + this.deltaY;
     }
 }
+//******************** END DROP CLASS
