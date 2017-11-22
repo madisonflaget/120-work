@@ -1,6 +1,6 @@
 Madison Flaget, 51
 
-[Water in the Vacuum of Space](https://madisonflaget.github.io/120-work/hw-11/
+[Water in the Vacuum of Space](https://madisonflaget.github.io/120-work/hw-11/)
 
 1) Summarize the work you did this homework cycle. Paying particular attention to the individual choices you made.
 
