@@ -1,8 +1,13 @@
-let drop;
+let drops = [];
 
 function setup() {
     createCanvas(windowWidth,windowHeight);
-    drop = new Drop(width/2, 100, 50, 'teal')
+
+}
+
+function mousePressed() {
+    let d = new Drop(width/2, 100, 50, 'teal')
+    drops.push(d);
 }
 
 function draw() {
@@ -14,8 +19,10 @@ function draw() {
     fill(150);
     rect((width/2)-50, 40, 100, 20);
 
-    drop.display();
-    drop.drift();
+    for (let i=0; i< drops.length; i++) {
+        drops[i].display();
+        drops[i].drift();
+    }
 }
 
 //*** DEFINE DROP CLASS ***********************************
@@ -29,14 +36,14 @@ class Drop {
         this.color = tempColor;
     }
 
-    // describes what the drop will look like
+    // describes what the drops will look like
     display() {
         noStroke();
         fill(this.color);
         ellipse( this.posX, this.posY, this.size)
     }
 
-    //describes drifting movement of the drops
+    //describes drifting movement of the dropss
     drift() {
         this.posX = this.posX + this.deltaX;
         this.posY = this.posY + this.deltaY;
