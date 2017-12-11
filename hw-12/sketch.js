@@ -1,4 +1,8 @@
 let drops = [];
+let dropSize = 50;
+let dropWeight = 5;
+let miniDropSize = 20;
+let miniDropWeight = 2;
 
 function setup() {
     createCanvas(windowWidth-20,windowHeight-20);
@@ -45,10 +49,10 @@ function draw() {
 }
 
 function dropTimer() {
-    let d1 = new Drop(width/2, 100, '#0199CB', '#02A8DB');
-    let d2 = new Drop(width/2, height-100, '#0199CB', '#02A8DB');
-    let d3 = new Drop(100, height/2, '#0199CB', '#02A8DB');
-    let d4 = new Drop(width-100, height/2, '#0199CB', '#02A8DB');
+    let d1 = new Drop(width/2, 100, '#0199CB', '#02A8DB', dropSize, dropWeight);
+    let d2 = new Drop(width/2, height-100, '#0199CB', '#02A8DB', dropSize, dropWeight);
+    let d3 = new Drop(100, height/2, '#0199CB', '#02A8DB', dropSize, dropWeight);
+    let d4 = new Drop(width-100, height/2, '#0199CB', '#02A8DB', dropSize, dropWeight);
     drops.push(d1);
     drops.push(d2);
     drops.push(d3);
@@ -79,6 +83,8 @@ function mousePressed() {
         let destroyMe = drops[i].mouseCheck();
         if (destroyMe) {
             drops.splice(i, 1);
+            let d = new Drop(mouseX, mouseY, '#0199CB', '#02A8DB', miniDropSize, miniDropWeight);
+            drops.push(d);
         }
     }
 }
@@ -86,24 +92,22 @@ function mousePressed() {
 //*** DEFINE DROP CLASS ***********************************
 class Drop {
     // basic info we will need for each drop
-    constructor(tempX, tempY, tempColor, tempStroke) {
+    constructor(tempX, tempY, tempColor, tempStroke, tempSize, tempStrokeWeight) {
         this.posX = tempX;
         this.posY = tempY;
-        // this.size = tempSize;
-        // this.width = random(40,60);
-        // this.height = random(40,60);
-        this.size = 50;
+        this.size = tempSize;
         this.rad = this.size / 2;
         this.deltaX = random(-2, 2);
         this.deltaY = random(-2, 2);
         this.color = color(tempColor);
         this.stroke = color(tempStroke);
+        this.strokeWeight = tempStrokeWeight;
     }
 
     // describes what the drops will look like
     display() {
         stroke(this.stroke);
-        strokeWeight(5);
+        strokeWeight(this.strokeWeight);
         fill(this.color);
         ellipse( this.posX, this.posY, this.size)
 
