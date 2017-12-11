@@ -3,7 +3,6 @@ let drops = [];
 function setup() {
     createCanvas(windowWidth-20,windowHeight-20);
     dropTimer();
-
 }
 
 function draw() {
@@ -37,8 +36,6 @@ function draw() {
     rect(width-40, (height/2)-50, 40, 100);
     fill(150);
     rect(width-60, (height/2)-50, 20, 100);
-
-
 
     for (let i=0; i< drops.length; i++) {
         drops[i].dropCheck(drops, i);
@@ -74,6 +71,17 @@ function dropTimer() {
 //     drops.push(d3);
 //     drops.push(d4);
 // }
+
+function mousePressed() {
+    // make the drops check themselves
+    // to see if the mouse is within them.
+    for (let i = drops.length - 1; i >= 0; i--) {
+        let destroyMe = drops[i].mouseCheck();
+        if (destroyMe) {
+            drops.splice(i, 1);
+        }
+    }
+}
 
 //*** DEFINE DROP CLASS ***********************************
 class Drop {
@@ -119,8 +127,20 @@ class Drop {
                 if (d <= combinedR) {
                     this.deltaX *= -1;
                     this.deltaY *= -1;
+                    // drops.splice( i, 1 );
                 }
             }
+        }
+    }
+    mouseCheck() {
+        // get the distance between the mouse and the center of the drop
+        let d = dist(this.posX, this.posY, mouseX, mouseY);
+        // check if that distance is less than the drop radius
+        // if it is, then the mouse if within
+        if (d < this.rad) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
