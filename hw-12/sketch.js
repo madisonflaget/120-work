@@ -88,8 +88,8 @@ function mousePressed() {
             drops.splice(i, 1);
             // create three mini droplets
             let dl1 = new Drop(mouseX, mouseY, dropColor, dropStrokeColor, dropletSize, dropletWeight);
-            let dl2 = new Drop(mouseX, mouseY, dropColor, dropStrokeColor, dropletSize, dropletWeight);
-            let dl3 = new Drop(mouseX, mouseY, dropColor, dropStrokeColor, dropletSize, dropletWeight);
+            let dl2 = new Drop(mouseX-(dropletSize+5), mouseY+(dropletSize+5), dropColor, dropStrokeColor, dropletSize, dropletWeight);
+            let dl3 = new Drop(mouseX+(dropletSize+5), mouseY+(dropletSize+5), dropColor, dropStrokeColor, dropletSize, dropletWeight);
             drops.push(dl1);
             drops.push(dl2);
             drops.push(dl3);
