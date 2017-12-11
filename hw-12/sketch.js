@@ -36,8 +36,9 @@ class Drop {
         this.posX = tempX;
         this.posY = tempY;
         // this.size = tempSize;
-        this.width = random(40,60);
-        this.height = random(40,60);
+        // this.width = random(40,60);
+        // this.height = random(40,60);
+        this.rad = 50;
         this.deltaX = random(-1, 1);
         this.deltaY = random(-1, 1);
         this.color = color(tempColor);
@@ -49,7 +50,8 @@ class Drop {
         stroke(this.stroke);
         strokeWeight(5);
         fill(this.color);
-        ellipse( this.posX, this.posY, this.width, this.height)
+        ellipse( this.posX, this.posY, this.rad)
+
     }
 
     //describes drifting movement of the dropss
