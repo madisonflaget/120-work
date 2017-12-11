@@ -1,8 +1,8 @@
 let drops = [];
 let dropSize = 50;
 let dropWeight = 5;
-let miniDropSize = 20;
-let miniDropWeight = 2;
+let dropletSize = 20;
+let dropletWeight = 2;
 let dropColor = '#0199CB';
 let dropStrokeColor = '#02A8DB';
 
@@ -84,9 +84,15 @@ function mousePressed() {
     for (let i = drops.length - 1; i >= 0; i--) {
         let destroyMe = drops[i].mouseCheck();
         if (destroyMe) {
+            // remove larger drop
             drops.splice(i, 1);
-            let d = new Drop(mouseX, mouseY, '#0199CB', '#02A8DB', miniDropSize, miniDropWeight);
-            drops.push(d);
+            // create three mini droplets
+            let dl1 = new Drop(mouseX, mouseY, dropColor, dropStrokeColor, dropletSize, dropletWeight);
+            let dl2 = new Drop(mouseX, mouseY, dropColor, dropStrokeColor, dropletSize, dropletWeight);
+            let dl3 = new Drop(mouseX, mouseY, dropColor, dropStrokeColor, dropletSize, dropletWeight);
+            drops.push(dl1);
+            drops.push(dl2);
+            drops.push(dl3);
         }
     }
 }
