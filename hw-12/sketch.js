@@ -1,27 +1,59 @@
 let drops = [];
 
 function setup() {
-    createCanvas(windowWidth,windowHeight);
+    createCanvas(windowWidth-20,windowHeight-20);
 
 }
 
 // each time the mouse is pressed, create 5 new instances of Drop
 function mousePressed() {
-    for (let i=0; i<5; i++) {
-        let d = new Drop(width/2, 100, '#0199CB', '#02A8DB');
-        drops.push(d);
-    }
+    // for (let i=0; i<3; i++) {
+    //     let d = new Drop(width/2, 100, '#0199CB', '#02A8DB');
+    //     drops.push(d);
+    // }
+    let d1 = new Drop(width/2, 100, '#0199CB', '#02A8DB');
+    let d2 = new Drop(width/2, height-100, '#0199CB', '#02A8DB');
+    let d3 = new Drop(100, height/2, '#0199CB', '#02A8DB');
+    let d4 = new Drop(width-100, height/2, '#0199CB', '#02A8DB');
+    drops.push(d1);
+    drops.push(d2);
+    drops.push(d3);
+    drops.push(d4);
 }
 
 function draw() {
     background(0);
 
-    // draw pipe from which the drops seem to appear
+    // draw pipes from which the drops seem to appear
+    // TOP PIPE
     noStroke();
     fill(200);
     rect((width/2)-50, 0, 100, 40);
     fill(150);
     rect((width/2)-50, 40, 100, 20);
+
+    // BOTTOM PIPE
+    noStroke();
+    fill(200);
+    rect((width/2)-50, height-40, 100, 40);
+    fill(150);
+    rect((width/2)-50, height-60, 100, 20);
+
+    // LEFT PIPE
+    noStroke();
+    fill(200);
+    rect(0, (height/2)-50, 40, 100);
+    fill(150);
+    rect(40, (height/2)-50, 20, 100);
+
+    // RIGHT PIPE
+    noStroke();
+    fill(200);
+    rect(width-40, (height/2)-50, 40, 100);
+    fill(150);
+    rect(width-60, (height/2)-50, 20, 100);
+
+
 
     for (let i=0; i< drops.length; i++) {
         drops[i].dropCheck(drops, i);
