@@ -8,7 +8,7 @@ function setup() {
 // each time the mouse is pressed, create 5 new instances of Drop
 function mousePressed() {
     for (let i=0; i<5; i++) {
-        let d = new Drop(width/2, 100, '#0199CB');
+        let d = new Drop(width/2, 100, '#0199CB', '#02A8DB');
         drops.push(d);
     }
 }
@@ -17,6 +17,7 @@ function draw() {
     background(0);
 
     // draw pipe from which the drops seem to appear
+    noStroke();
     fill(200);
     rect((width/2)-50, 0, 100, 40);
     fill(150);
@@ -31,7 +32,7 @@ function draw() {
 //*** DEFINE DROP CLASS ***********************************
 class Drop {
     // basic info we will need for each drop
-    constructor(tempX, tempY, tempColor) {
+    constructor(tempX, tempY, tempColor, tempStroke) {
         this.posX = tempX;
         this.posY = tempY;
         // this.size = tempSize;
@@ -40,11 +41,13 @@ class Drop {
         this.deltaX = random(-1, 1);
         this.deltaY = random(-1, 1);
         this.color = color(tempColor);
+        this.stroke = color(tempStroke);
     }
 
     // describes what the drops will look like
     display() {
-        noStroke();
+        stroke(this.stroke);
+        strokeWeight(5);
         fill(this.color);
         ellipse( this.posX, this.posY, this.width, this.height)
     }
