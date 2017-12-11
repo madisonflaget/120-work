@@ -24,6 +24,7 @@ function draw() {
     rect((width/2)-50, 40, 100, 20);
 
     for (let i=0; i< drops.length; i++) {
+        drops[i].dropCheck(drops, i);
         drops[i].display();
         drops[i].drift();
     }
@@ -38,7 +39,8 @@ class Drop {
         // this.size = tempSize;
         // this.width = random(40,60);
         // this.height = random(40,60);
-        this.rad = 50;
+        this.size = 50;
+        this.rad = this.size / 2;
         this.deltaX = random(-1, 1);
         this.deltaY = random(-1, 1);
         this.color = color(tempColor);
@@ -50,7 +52,7 @@ class Drop {
         stroke(this.stroke);
         strokeWeight(5);
         fill(this.color);
-        ellipse( this.posX, this.posY, this.rad)
+        ellipse( this.posX, this.posY, this.size)
 
     }
 
@@ -58,6 +60,23 @@ class Drop {
     drift() {
         this.posX = this.posX + this.deltaX;
         this.posY = this.posY + this.deltaY;
+    }
+
+    dropCheck(otherDrops, myId) {
+        // for loop touches each of the drops in the array
+        for (let n = 0; n < otherDrops.length; n++) {
+            // if n != myId, then check for touching
+            // otherwise, its ME and we need to skip
+            if (n != myId) {
+                let d = dist(this.posX, this.posY, otherDrops[n].posX, otherDrops[n].posY);
+                let combinedR = this.rad + otherDrops[n].rad;
+
+                if (d <= combinedR) {
+                    this.deltaX *= -1;
+                    this.deltaY *= -1;
+                }
+            }
+        }
     }
 }
 //******************** END DROP CLASS
