@@ -14,7 +14,7 @@ function setup() {
 function draw() {
     background(0);
 
-    // draw pipes from which the drops seem to appear
+    //*** DRAW PIPES FOR DROPS **************
     // TOP PIPE
     noStroke();
     fill(200);
@@ -42,6 +42,7 @@ function draw() {
     rect(width-40, (height/2)-50, 40, 100);
     fill(150);
     rect(width-60, (height/2)-50, 20, 100);
+    //*** END PIPES**************************
 
     for (let i=0; i< drops.length; i++) {
         drops[i].dropCheck(drops, i);
@@ -51,6 +52,7 @@ function draw() {
 }
 
 function dropTimer() {
+    // create 3 drops every 2 seconds, each from a different pipe
     let d1 = new Drop(width/2, 100, dropColor, dropStrokeColor, dropSize, dropWeight);
     let d2 = new Drop(width/2, height-100, dropColor, dropStrokeColor, dropSize, dropWeight);
     let d3 = new Drop(100, height/2, dropColor, dropStrokeColor, dropSize, dropWeight);
@@ -62,22 +64,6 @@ function dropTimer() {
     setTimeout(dropTimer, 2000);
 }
 
-// each time the mouse is pressed, create 5 new instances of Drop
-// function mousePressed() {
-//     // for (let i=0; i<3; i++) {
-//     //     let d = new Drop(width/2, 100, '#0199CB', '#02A8DB');
-//     //     drops.push(d);
-//     // }
-//     let d1 = new Drop(width/2, 100, '#0199CB', '#02A8DB');
-//     let d2 = new Drop(width/2, height-100, '#0199CB', '#02A8DB');
-//     let d3 = new Drop(100, height/2, '#0199CB', '#02A8DB');
-//     let d4 = new Drop(width-100, height/2, '#0199CB', '#02A8DB');
-//     drops.push(d1);
-//     drops.push(d2);
-//     drops.push(d3);
-//     drops.push(d4);
-// }
-
 function mousePressed() {
     // make the drops check themselves
     // to see if the mouse is within them.
@@ -86,7 +72,7 @@ function mousePressed() {
         if (destroyMe) {
             // remove larger drop
             drops.splice(i, 1);
-            // create three mini droplets
+            // create three droplets
             let dl1 = new Drop(mouseX, mouseY, dropColor, dropStrokeColor, dropletSize, dropletWeight);
             let dl2 = new Drop(mouseX-(dropletSize+5), mouseY+(dropletSize+5), dropColor, dropStrokeColor, dropletSize, dropletWeight);
             let dl3 = new Drop(mouseX+(dropletSize+5), mouseY+(dropletSize+5), dropColor, dropStrokeColor, dropletSize, dropletWeight);
@@ -139,6 +125,9 @@ class Drop {
                 if (d <= combinedR) {
                     this.deltaX *= -1;
                     this.deltaY *= -1;
+                    // wanted drops to split into droplets when they touch but had problems coding
+                    // also knew this would cause an issue when droplets touches
+                    // i.e. droplets could infinitley spawn more droplets
                     // drops.splice( i, 1 );
                 }
             }
