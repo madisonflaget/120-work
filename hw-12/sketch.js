@@ -3,6 +3,8 @@ let dropSize = 50;
 let dropWeight = 5;
 let miniDropSize = 20;
 let miniDropWeight = 2;
+let dropColor = '#0199CB';
+let dropStrokeColor = '#02A8DB';
 
 function setup() {
     createCanvas(windowWidth-20,windowHeight-20);
@@ -49,10 +51,10 @@ function draw() {
 }
 
 function dropTimer() {
-    let d1 = new Drop(width/2, 100, '#0199CB', '#02A8DB', dropSize, dropWeight);
-    let d2 = new Drop(width/2, height-100, '#0199CB', '#02A8DB', dropSize, dropWeight);
-    let d3 = new Drop(100, height/2, '#0199CB', '#02A8DB', dropSize, dropWeight);
-    let d4 = new Drop(width-100, height/2, '#0199CB', '#02A8DB', dropSize, dropWeight);
+    let d1 = new Drop(width/2, 100, dropColor, dropStrokeColor, dropSize, dropWeight);
+    let d2 = new Drop(width/2, height-100, dropColor, dropStrokeColor, dropSize, dropWeight);
+    let d3 = new Drop(100, height/2, dropColor, dropStrokeColor, dropSize, dropWeight);
+    let d4 = new Drop(width-100, height/2, dropColor, dropStrokeColor, dropSize, dropWeight);
     drops.push(d1);
     drops.push(d2);
     drops.push(d3);
