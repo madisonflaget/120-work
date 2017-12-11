@@ -1,6 +1,6 @@
 Madison Flaget, 51
 
-[Water in the Vacuum of Space](https://madisonflaget.github.io/120-work/hw-12/)
+[Drops in Space](https://madisonflaget.github.io/120-work/hw-12/)
 
 1) Summarize the work you did this homework cycle. Paying particular attention to the individual choices you made.
 
@@ -8,7 +8,7 @@ Madison Flaget, 51
 
 2) What steps did you take to complete the assignment?
 
-    I slowly added more and more interactive elements to my former code. I added stroke colors and made the drops circular. This was to make the drop mroe defined and accomodate a mousePressed function later. Then I made them bounce off of one another, set them to appear from seperate pipes, and set up a timer to trigger them. Clicking on a large drop makes it explode into 3 smaller drops.
+    I slowly added more and more interactive elements to my former code. I added stroke colors and made the drops circular. This was to make the drop mroe defined and accomodate a mousePressed function later. Then I made them bounce off of one another, set them to appear from seperate pipes, and set up a timer to trigger them. Clicking on a large drop makes it explode into 3 smaller drops. Lastly I added an array that genraetes stars for the background. I think this little touch really sells the idea of the piece.
 
 3) Did you have any problems or issues? How did you solve these? Did you post about these to the class repo issue tracker? Did you receive any useful feedback from your classmates?
 
@@ -20,4 +20,4 @@ Madison Flaget, 51
 
 5) What issues did you help your fellow classmates out with this past homework cycle?
 
-    Commented on SuffnThinz's issue.
+    Commented on SuffnThinz's issue. Also gave him a link to our course site with the answer to what I think is his issue.
