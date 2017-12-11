@@ -2,23 +2,8 @@ let drops = [];
 
 function setup() {
     createCanvas(windowWidth-20,windowHeight-20);
+    dropTimer();
 
-}
-
-// each time the mouse is pressed, create 5 new instances of Drop
-function mousePressed() {
-    // for (let i=0; i<3; i++) {
-    //     let d = new Drop(width/2, 100, '#0199CB', '#02A8DB');
-    //     drops.push(d);
-    // }
-    let d1 = new Drop(width/2, 100, '#0199CB', '#02A8DB');
-    let d2 = new Drop(width/2, height-100, '#0199CB', '#02A8DB');
-    let d3 = new Drop(100, height/2, '#0199CB', '#02A8DB');
-    let d4 = new Drop(width-100, height/2, '#0199CB', '#02A8DB');
-    drops.push(d1);
-    drops.push(d2);
-    drops.push(d3);
-    drops.push(d4);
 }
 
 function draw() {
@@ -62,6 +47,34 @@ function draw() {
     }
 }
 
+function dropTimer() {
+    let d1 = new Drop(width/2, 100, '#0199CB', '#02A8DB');
+    let d2 = new Drop(width/2, height-100, '#0199CB', '#02A8DB');
+    let d3 = new Drop(100, height/2, '#0199CB', '#02A8DB');
+    let d4 = new Drop(width-100, height/2, '#0199CB', '#02A8DB');
+    drops.push(d1);
+    drops.push(d2);
+    drops.push(d3);
+    drops.push(d4);
+    setTimeout(dropTimer, 2000);
+}
+
+// each time the mouse is pressed, create 5 new instances of Drop
+// function mousePressed() {
+//     // for (let i=0; i<3; i++) {
+//     //     let d = new Drop(width/2, 100, '#0199CB', '#02A8DB');
+//     //     drops.push(d);
+//     // }
+//     let d1 = new Drop(width/2, 100, '#0199CB', '#02A8DB');
+//     let d2 = new Drop(width/2, height-100, '#0199CB', '#02A8DB');
+//     let d3 = new Drop(100, height/2, '#0199CB', '#02A8DB');
+//     let d4 = new Drop(width-100, height/2, '#0199CB', '#02A8DB');
+//     drops.push(d1);
+//     drops.push(d2);
+//     drops.push(d3);
+//     drops.push(d4);
+// }
+
 //*** DEFINE DROP CLASS ***********************************
 class Drop {
     // basic info we will need for each drop
@@ -73,8 +86,8 @@ class Drop {
         // this.height = random(40,60);
         this.size = 50;
         this.rad = this.size / 2;
-        this.deltaX = random(-1, 1);
-        this.deltaY = random(-1, 1);
+        this.deltaX = random(-2, 2);
+        this.deltaY = random(-2, 2);
         this.color = color(tempColor);
         this.stroke = color(tempStroke);
     }
