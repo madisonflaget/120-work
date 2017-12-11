@@ -1,4 +1,7 @@
 let drops = [];
+let starX = [];
+let starY = [];
+let starSize = [];
 let dropSize = 50;
 let dropWeight = 5;
 let dropletSize = 20;
@@ -9,11 +12,28 @@ let dropStrokeColor = '#02A8DB';
 function setup() {
     createCanvas(windowWidth-20,windowHeight-20);
     dropTimer();
-    
+
+    // create an array to generate random x, y, and size values
+    for( let num=0; num<200; num++ ){
+        // create and push in a new random number
+        starX.push( random( 0, width ) );
+        starY.push( random( 0, height ) );
+        starSize.push( random(1,4));
+    }
+
 }
 
 function draw() {
     background(0);
+
+    // use the star array to draw a stary background
+    for( let idx=0; idx<starX.length; idx++ ){
+        push();
+            fill(255);
+            noStroke();
+            ellipse( starX[idx], starY[idx], starSize[idx]);
+        pop();
+}
 
     //*** DRAW PIPES FOR DROPS **************
     // TOP PIPE
