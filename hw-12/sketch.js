@@ -9,6 +9,7 @@ let dropStrokeColor = '#02A8DB';
 function setup() {
     createCanvas(windowWidth-20,windowHeight-20);
     dropTimer();
+    
 }
 
 function draw() {
