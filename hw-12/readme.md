@@ -4,11 +4,11 @@ Madison Flaget, 51
 
 1) Summarize the work you did this homework cycle. Paying particular attention to the individual choices you made.
 
-    This week I worked through the content and though about how I could implement that in my week 11 coe. I decided to combine several of the techniques for interactivity to make my previous code more intresting
+    This week I worked through the content and though about how I could implement that in my week 11 code. I decided to combine several of the techniques for interactivity to make my previous code more intresting.
 
 2) What steps did you take to complete the assignment?
 
-    I slowly added more and more interactive elements to my former code. I added stroke colors and made the drops circular. This was to make the drop mroe defined and accomodate a mousePressed function later. Then I made them bounce off of one another, set them to appear from seperate pipes, and set up a timer to trigger them. Clicking on a large drop makes it explode into 3 smaller drops. Lastly I added an array that genraetes stars for the background. I think this little touch really sells the idea of the piece.
+    I slowly added more and more interactive elements to my former code. I added stroke colors and made the drops circular. This was to make the drop mroe defined and accomodate a mousePressed function later. Then I made them bounce off of one another, set them to appear from seperate pipes, and set up a timer to trigger them. Clicking on a large drop makes it explode into 3 smaller drops. Lastly I added an array that generates stars for the background. I think this little touch really sells the idea of the piece. I also worked with Michael during office hours to restrict the drop timer to only generate a new drop if the area around the pipe is clear.
 
 3) Did you have any problems or issues? How did you solve these? Did you post about these to the class repo issue tracker? Did you receive any useful feedback from your classmates?
 

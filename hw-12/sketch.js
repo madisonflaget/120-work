@@ -20,7 +20,6 @@ function setup() {
         starY.push( random( 0, height ) );
         starSize.push( random(1,4));
     }
-
 }
 
 function draw() {
@@ -29,11 +28,11 @@ function draw() {
     // use the star array to draw a stary background
     for( let idx=0; idx<starX.length; idx++ ){
         push();
-            fill(255);
-            noStroke();
-            ellipse( starX[idx], starY[idx], starSize[idx]);
+        fill(255);
+        noStroke();
+        ellipse( starX[idx], starY[idx], starSize[idx]);
         pop();
-}
+    }
 
     //*** DRAW PIPES FOR DROPS **************
     // TOP PIPE
@@ -73,16 +72,29 @@ function draw() {
 }
 
 function dropTimer() {
-    // create 3 drops every 2 seconds, each from a different pipe
-    let d1 = new Drop(width/2, 100, dropColor, dropStrokeColor, dropSize, dropWeight);
-    let d2 = new Drop(width/2, height-100, dropColor, dropStrokeColor, dropSize, dropWeight);
-    let d3 = new Drop(100, height/2, dropColor, dropStrokeColor, dropSize, dropWeight);
-    let d4 = new Drop(width-100, height/2, dropColor, dropStrokeColor, dropSize, dropWeight);
-    drops.push(d1);
-    drops.push(d2);
-    drops.push(d3);
-    drops.push(d4);
+
+    // check the creation point near every pipe to see if clear of drops
+    // if clear, create 3 drops every 2 seconds, each from a different pipe
+    pipeCheck(width/2, 100);
+    pipeCheck(width/2, height-100);
+    pipeCheck(100, height/2);
+    pipeCheck(width-100, height/2);
     setTimeout(dropTimer, 2000);
+}
+
+function pipeCheck(createX, createY){
+    let create = true;
+    for( let i = 0; i < drops.length; i++){
+        let d = dist(createX, createY, drops[i].posX, drops[i].posY);
+        let thresh = 110;
+        if( d < thresh ) {
+            create = false;
+        }
+    }
+    if(create){
+        let d1 = new Drop(createX, createY, dropColor, dropStrokeColor, dropSize, dropWeight);
+        drops.push(d1);
+    }
 }
 
 function mousePressed() {
@@ -134,6 +146,7 @@ class Drop {
         this.posY = this.posY + this.deltaY;
     }
 
+    // checks if drops touch eachother. Sets them to bounce off of one another
     dropCheck(otherDrops, myId) {
         // for loop touches each of the drops in the array
         for (let n = 0; n < otherDrops.length; n++) {
