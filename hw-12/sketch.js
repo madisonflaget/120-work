@@ -64,10 +64,12 @@ function draw() {
     rect(width-60, (height/2)-50, 20, 100);
     //*** END PIPES**************************
 
-    for (let i=0; i< drops.length; i++) {
-        drops[i].dropCheck(drops, i);
-        drops[i].display();
-        drops[i].drift();
+    for (let i=drops.length-1; i >= 0; i--) {
+        if(drops[i]){
+            drops[i].display();
+            drops[i].drift();
+            drops[i].dropCheck(drops, i);            
+        }
     }
 }
 
@@ -105,7 +107,7 @@ function mousePressed() {
         if (destroyMe) {
             // remove larger drop
             drops.splice(i, 1);
-            // create three droplets
+            // create three droplets when clicked by mouse
             let dl1 = new Drop(mouseX, mouseY, dropColor, dropStrokeColor, dropletSize, dropletWeight);
             let dl2 = new Drop(mouseX-(dropletSize+5), mouseY+(dropletSize+5), dropColor, dropStrokeColor, dropletSize, dropletWeight);
             let dl3 = new Drop(mouseX+(dropletSize+5), mouseY+(dropletSize+5), dropColor, dropStrokeColor, dropletSize, dropletWeight);
@@ -122,8 +124,7 @@ class Drop {
     constructor(tempX, tempY, tempColor, tempStroke, tempSize, tempStrokeWeight) {
         this.posX = tempX;
         this.posY = tempY;
-        this.size = tempSize;
-        this.rad = this.size / 2;
+        this.rad = tempSize / 2;
         this.deltaX = random(-2, 2);
         this.deltaY = random(-2, 2);
         this.color = color(tempColor);
@@ -136,8 +137,7 @@ class Drop {
         stroke(this.stroke);
         strokeWeight(this.strokeWeight);
         fill(this.color);
-        ellipse( this.posX, this.posY, this.size)
-
+        ellipse( this.posX, this.posY, this.rad * 2);
     }
 
     //describes drifting movement of the dropss
@@ -157,12 +157,10 @@ class Drop {
                 let combinedR = this.rad + otherDrops[n].rad;
 
                 if (d <= combinedR) {
-                    this.deltaX *= -1;
-                    this.deltaY *= -1;
-                    // wanted drops to split into droplets when they touch but had problems coding
-                    // also knew this would cause an issue when droplets touches
-                    // i.e. droplets could infinitley spawn more droplets
-                    // drops.splice( i, 1 );
+                    // this.deltaX *= -1;
+                    // this.deltaY *= -1;
+                    this.rad += otherDrops[n].rad
+                    otherDrops.splice( n, 1 );
                 }
             }
         }
